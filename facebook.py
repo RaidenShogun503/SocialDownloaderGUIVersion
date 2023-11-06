@@ -30,7 +30,7 @@ def download_video():
     with open (name, 'wb') as f:
         f.write(r.content)
 root = Tk()
-root.title("Facebook Downloader (Made by Raidenshogun508)")
+root.title("Facebook Downloader (Made by Raidenshogun503)")
 root.minsize(300, 150)
 root.maxsize(300, 150)
 icon_path = "icon.ico"

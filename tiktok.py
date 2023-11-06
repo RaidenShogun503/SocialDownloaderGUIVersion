@@ -31,7 +31,7 @@ def taivideo():
 
 
 root = Tk()
-root.title("Tiktok Downloader (Made by RaidenShogun508)")
+root.title("Tiktok Downloader (Made by RaidenShogun503)")
 root.minsize(300, 150)
 root.maxsize(300, 150)
 icon_path = "icon.ico"

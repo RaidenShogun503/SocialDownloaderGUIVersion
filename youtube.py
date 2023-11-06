@@ -20,7 +20,7 @@ def taivideo():
         messagebox.showerror("Lỗi", "Vui lòng nhập URL video!")
 
 root = Tk()
-root.title("Youtube Downloader (Made by RaidenShogun508)")
+root.title("Youtube Downloader (Made by RaidenShogun503)")
 root.minsize(300, 150)
 root.maxsize(300, 150)
 icon_path = "icon.ico"

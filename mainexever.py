@@ -4,7 +4,7 @@ from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox
 root = Tk()
-root.title("SocialDownloader(Made by RaidenShogun508)")
+root.title("SocialDownloader(Made by RaidenShogun503)")
 root.minsize(200, 120)
 root.maxsize(200, 120)
 icon_path = "icon.ico"
