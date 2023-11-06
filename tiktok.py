@@ -34,6 +34,8 @@ root = Tk()
 root.title("Tiktok Downloader (Made by RaidenShogun508)")
 root.minsize(300, 150)
 root.maxsize(300, 150)
+icon_path = "icon.ico"
+root.iconbitmap(icon_path)
 
 frm = ttk.Frame(root, padding=10)
 frm.grid()

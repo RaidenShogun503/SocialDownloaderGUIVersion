@@ -22,7 +22,6 @@ def download_video():
     }
     response = requests.get(url, headers=headers, params=querystring)
     hd_link = response.json()["hd"]
-    print(hd_link)
     messagebox.showinfo("Thông báo!", f"Đã tải video thành công!")
     r = requests.get(hd_link)
     names = random.randrange(1, 1000)
@@ -34,6 +33,8 @@ root = Tk()
 root.title("Facebook Downloader (Made by Raidenshogun508)")
 root.minsize(300, 150)
 root.maxsize(300, 150)
+icon_path = "icon.ico"
+root.iconbitmap(icon_path)
 
 frm = ttk.Frame(root, padding=10)
 frm.grid()
