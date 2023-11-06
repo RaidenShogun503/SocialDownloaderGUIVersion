@@ -15,7 +15,7 @@ def taivideo():
                 ydl.download([video_url])
                 messagebox.showinfo("Thông báo", f"Tải video {video_title} thành công!")
         except Exception as e:
-            messagebox.showerror("Lỗi", f"Có lỗi xảy ra: {str(e)}")
+            messagebox.showerror("Lỗi", f"Có lỗi xảy ra: {str(e)}.Vui lòng xem lại link tải hoặc báo cáo lỗi qua github https://github.com/RaidenShogun503/SocialDownloaderGUIVersion")
     else:
         messagebox.showerror("Lỗi", "Vui lòng nhập URL video!")
 

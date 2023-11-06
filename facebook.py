@@ -14,21 +14,28 @@ def get_download_high_quality_url(json_data):
 def download_video():
     nhapurl = entry.get()
     url = "https://facebook-video-downloader7.p.rapidapi.com/"
-    querystring = {"url":nhapurl}
+    querystring = {"url": nhapurl}
 
     headers = {
         "X-RapidAPI-Key": "ea26619e18mshcc8a1b5bee643dbp1ca309jsna56e31c8df7f",
         "X-RapidAPI-Host": "facebook-video-downloader7.p.rapidapi.com"
     }
     response = requests.get(url, headers=headers, params=querystring)
-    hd_link = response.json()["hd"]
-    messagebox.showinfo("Thông báo!", f"Đã tải video thành công!")
-    r = requests.get(hd_link)
-    names = random.randrange(1, 1000)
-    name = 'video'+str(names)+'.mp4'
-    r = requests.get(hd_link)
-    with open (name, 'wb') as f:
-        f.write(r.content)
+
+    if response.status_code == 200:
+        try:
+            hd_link = response.json()["hd"]
+            r = requests.get(hd_link)
+            names = random.randrange(1, 1000)
+            name = 'video' + str(names) + '.mp4'
+            with open(name, 'wb') as f:
+                f.write(r.content)
+            messagebox.showinfo("Thông báo!", f"Đã tải video thành công!")
+        except (KeyError, ValueError):
+            messagebox.showerror("Lỗi", "Không thể tải video hoặc lỗi khi xử lý dữ liệu!")
+    else:
+        messagebox.showerror("Lỗi", f"Lỗi khi tải video: {response.status_code}.Vui lòng xem lại link tải hoặc báo cáo lỗi qua github https://github.com/RaidenShogun503/SocialDownloaderGUIVersion")
+
 root = Tk()
 root.title("Facebook Downloader (Made by Raidenshogun503)")
 root.minsize(300, 150)

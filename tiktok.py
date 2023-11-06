@@ -19,14 +19,16 @@ def taivideo():
     video = video.replace('[','')
 
     link = re.findall(r'{"video":"([^"]+)"',video)
-    url_video = ''.join(link)
-    messagebox.showinfo("Thông Báo", f"Đã Tải Video Thành Công!")
-    names = random.randrange(1, 1000)
-    name = 'video'+str(names)+'.mp4'
-
-    r = requests.get(url_video)
-    with open(name, 'wb') as f:
-        f.write(r.content)
+    if link:
+        url_video = ''.join(link)
+        messagebox.showinfo("Thông Báo", f"Đã Tải Video Thành Công!")
+        names = random.randrange(1, 1000)
+        name = 'video'+str(names)+'.mp4'
+        r = requests.get(url_video)
+        with open(name, 'wb') as f:
+            f.write(r.content)
+    else:
+        messagebox.showerror("Lỗi", f"Đã có lỗi xảy ra khi tải video.Vui lòng xem lại link tải hoặc báo cáo lỗi lên github https://github.com/RaidenShogun503/SocialDownloaderGUIVersion")
 
 
 
